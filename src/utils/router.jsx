@@ -18,12 +18,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allTreatments',
-                element: <AllTreatments></AllTreatments>
+                element: <AllTreatments></AllTreatments>,
+                loader: () => fetch("/service.json")
             },
             {
                 path: '/myAppointments',
                 element: <MyAppointments></MyAppointments>
-            }, 
+            },
             {
                 path: '/profile',
                 element: <Profile></Profile>

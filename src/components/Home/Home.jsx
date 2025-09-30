@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import { useLoaderData } from 'react-router-dom';
+import { NavLink, useLoaderData } from 'react-router-dom';
 import ServiceCard from '../ServiceCard/ServiceCard';
 
 const Home = () => {
@@ -8,13 +8,17 @@ const Home = () => {
     const services = useLoaderData();
 
     return (
-        <div className='text-red-500 text-2xl'>
+        <div>
             <Banner></Banner>
-            <div>
+            <div className='grid-cols-4 gap-6 grid w-[80%] mx-auto max-w-[1200px] mt-6'>
                 {
-                    services.map(service => <ServiceCard></ServiceCard>)
+                    services.slice(0, 4).map(service => <ServiceCard service={service}></ServiceCard>)
                 }
             </div>
+            <button className='mx-auto btn btn-primary block mt-4'>
+                <NavLink to='/allTreatments'>Show more</NavLink>
+            </button>
+
         </div>
     );
 };
