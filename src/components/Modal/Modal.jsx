@@ -1,12 +1,18 @@
 import React from 'react';
 
 const Modal = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+    }
+
     return (
         <div>
             <input type="checkbox" id="my_modal_6" className="modal-toggle" />
             <div className="modal" role="dialog">
                 <div className="modal-box">
-                    <form action="">
+                    <form action="" onSubmit={handleSubmit}>
                         <div>
                             First name
                             <input type="text" placeholder="Type here" className="input" name='Fname'/>
@@ -31,6 +37,7 @@ const Modal = () => {
                             Address
                             <input type="text" placeholder="Type here" className="input" name='address'/>
                         </div>
+                        <button className='btn-primary btn' type='submit'>Make Appointments</button>
                     </form>
                     <div className="modal-action">
                         <label htmlFor="my_modal_6" className="btn">Close!</label>
